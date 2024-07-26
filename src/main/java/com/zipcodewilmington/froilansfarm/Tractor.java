@@ -2,7 +2,7 @@ package com.zipcodewilmington.froilansfarm;
 
 import java.util.ArrayList;
 
-public class Tractor extends Vehicle implements FarmVehicle <Farmer> {
+public class Tractor extends Vehicle implements FarmVehicle<Farmer> {
     boolean operational;
     String noise;
     ArrayList<Crop> cropArrayList = new ArrayList<>();
@@ -18,5 +18,10 @@ public class Tractor extends Vehicle implements FarmVehicle <Farmer> {
 
     public void harvest(Crop crop) {
         cropArrayList.add(crop);
+    }
+
+    @Override
+    public Boolean operateOnFarm() {
+        return operational;
     }
 }
