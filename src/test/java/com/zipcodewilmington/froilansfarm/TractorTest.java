@@ -18,8 +18,8 @@ public class TractorTest {
     @BeforeEach
     public void setUp() {
         tractor = new Tractor(true, "Vroom");
-//        cornStalk = new CornStalk();
-//        tomatoPlant = new TomatoPlant();
+        earCorn = new EarCorn();
+        tomato = new Tomato();
     }
 
     @Test
