@@ -17,4 +17,7 @@ public class Vehicle implements NoiseMaker {
     public String makeNoise() {
         return "Vroom";
     }
+
+    public void setOperational(boolean b) {
+    }
 }
