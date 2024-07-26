@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm;
 
 public class Vehicle implements NoiseMaker {
+    private boolean operational;
 
     public Vehicle(boolean b, String vroom) {
     }

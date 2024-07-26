@@ -46,8 +46,4 @@ public class VehicleTest {
         //Test that the vehicle can be ridden when operational
         assertFalse(vehicle.ridden(person), "Vehicle should be able to be ridden when operating");
     }
-
-    @Test
-    void setOperational() {
-    }
 }
