@@ -23,7 +23,7 @@ public class HorseTest {
             String expectedString = "Neigh!";
             //When
             String actualString = horse.makeNoise();
-            //Then
+            //Then coreye
             Assert.assertEquals(expectedString, actualString);
         }
 
