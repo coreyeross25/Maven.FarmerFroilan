@@ -46,4 +46,5 @@ public class VehicleTest {
         //Test that the vehicle can be ridden when operational
         assertTrue(vehicle.ridden(person), "Vehicle should be able to be ridden when operating");
     }
+
 }
