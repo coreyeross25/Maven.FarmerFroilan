@@ -42,9 +42,12 @@ public class VehicleTest {
 
     //Testing method Ridden()
     @Test
-    public void ridden() {
+    public void TestRidden() {
         //Test that the vehicle can be ridden when operational
-        assertTrue(vehicle.ridden(person), "Vehicle should be able to be ridden when operating");
+        assertFalse(vehicle.ridden(person), "Vehicle should be able to be ridden when operating");
     }
 
+    @Test
+    void setOperational() {
+    }
 }

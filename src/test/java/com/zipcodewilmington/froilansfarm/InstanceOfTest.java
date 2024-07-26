@@ -14,7 +14,7 @@ public class InstanceOfTest {
     }
     @Test
     public void cornInstanceOfTest(){
-        CornStalk word2Mommy = new earCorn();
+        CornStalk word2Mommy = new EarCorn();
 
         Assert.assertTrue( word2Mommy instanceof CornStalk);
     }
