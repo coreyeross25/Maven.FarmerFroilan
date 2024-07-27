@@ -1,66 +1,63 @@
 package com.zipcodewilmington.froilansfarm;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TractorTest {
 
     private Tractor tractor;
-    private ArrayList<Crop> cropArrayList;
     private Tomato tomato;
     private EarCorn earCorn;
 
     @BeforeEach
     public void setUp() {
+        // Initialize Tractor with operational status and noise
         tractor = new Tractor(true, "Vroom");
         earCorn = new EarCorn();
         tomato = new Tomato();
     }
 
     @Test
-    public void testHarvest_CornStalk_Success() {
-        //Given
-        //A tractor that is operational and a corn stalk to harvest
+    public void testHarvest_EarCorn_Success() {
+        // Given
         Integer expected = 2;
 
-        //When
+        // When
         tractor.harvest(earCorn);
         tractor.harvest(earCorn);
 
+        // Access the crop list through a getter method if needed
+        Integer actual = tractor.getCropArrayList().size();
 
-        Integer actual = tractor.cropArrayList.size();
-
-        //Then
-        Assert.assertEquals(expected, actual);
+        // Then
+        assertEquals(expected, actual, "The number of harvested corn stalks should be 2.");
     }
 
     @Test
-    public void testHarvest_tomato_Success() {
-        //Given
-        //A tractor that is operational and a corn stalk to harvest
+    public void testHarvest_Tomato_Success() {
+        // Given
         Integer expected = 2;
 
-        //When
+        // When
         tractor.harvest(tomato);
         tractor.harvest(tomato);
 
+        // Access the crop list through a getter method if needed
+        Integer actual = tractor.getCropArrayList().size();
 
-        Integer actual = tractor.cropArrayList.size();
-
-        //Then
-        Assert.assertEquals(expected, actual);
+        // Then
+        assertEquals(expected, actual, "The number of harvested tomatoes should be 2.");
     }
 
     @Test
     public void testInstanceOfVehicle() {
-        //Given
+        // Given
         Vehicle vehicle = new Tractor();
 
-        Assert.assertTrue(vehicle instanceof Vehicle);
+        // Then
+        assertTrue(vehicle instanceof Vehicle, "The Tractor should be an instance of Vehicle.");
     }
 }
