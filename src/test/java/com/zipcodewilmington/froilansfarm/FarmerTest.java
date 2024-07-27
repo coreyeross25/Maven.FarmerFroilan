@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class FarmerTest {
 
+
     private Farmer farmer;
     private Tractor tractor;
 
