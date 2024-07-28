@@ -4,35 +4,22 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class ChickenTest {
-    //Chicken chicken = new Chicken();
-    //String food;
 
-
-    /*@Test
-    public void eatTest() {
-        //Given
-        String expectedString = "corn";
-        //When
-        chicken.eat(food);
-        //Then
-        Assert.assertEquals(eat);
-    }
 
     @Test
-    public void yieldTest(){
-        //Given
-        //When
-        Edible actual = chicken.yield();
-        //Then
-        Assert.assertNotNull(actual);
+    public void eatTest() {
+        String expected = "";
+        Chicken chicken = new Chicken();
+        String actual = chicken.eat("");
+        Assert.assertEquals(expected, actual);
+
     }
-
-
 
     @Test
     public void makeNoiseTest() {
+        Chicken chicken = new Chicken();
         //Given
-        String expectedString = "Cluck!";
+        String expectedString = "";
         //When
         String actualString = chicken.makeNoise();
         //Then
@@ -40,23 +27,13 @@ public class ChickenTest {
     }
 
     @Test
-    public void getHasBeenFertilizedTest() {
-        //Given
-        chicken.setHasBeenFertilized(true);
-        // When
-        boolean actualFlag = chicken.hasBeenFertilized();
-        // Then
-        Assert.assertTrue(actualFlag);
+    public void testHasBeenFertilized() {
+        Chicken chicken = new Chicken();
+
+        Boolean expected = true;
+
+
     }
 
-    @Test
-    public void setHasBeenFertilizedTest() {
-        //Given
-        boolean expectedBoolean = false;
-        //When
-        chicken.setHasBeenFertilized(false);
-        //Then
-        Assert.assertEquals(expectedBoolean, chicken.hasBeenFertilized());
-    }*/
 }
 

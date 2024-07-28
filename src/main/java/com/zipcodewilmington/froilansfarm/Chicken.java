@@ -17,4 +17,8 @@ public class Chicken implements NoiseMaker {
     public <Edible> Edible yield() {
         return null;
     }
+
+    public String eat(String s) {
+        return s;
+    }
 }
