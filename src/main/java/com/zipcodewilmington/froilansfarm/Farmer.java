@@ -1,6 +1,20 @@
 package com.zipcodewilmington.froilansfarm;
 
-public abstract class Farmer extends Person implements Rider<Tractor> {
+import java.util.ArrayList;
+
+public abstract class Farmer extends Person implements Rider<Tractor>, Botanist {
+
+    private ArrayList<Crop> plantedCrops = new ArrayList<>();
+
+    @Override
+    public String plantCrops(Crop crop) {
+        plantedCrops.add(crop);
+        return "Successfully planted " + crop.getClass().getSimpleName();
+    }
+
+    public ArrayList<Crop> getPlantedCrops() {
+        return plantedCrops;
+    }
 
     @Override
     public String mount(Tractor tractor) {

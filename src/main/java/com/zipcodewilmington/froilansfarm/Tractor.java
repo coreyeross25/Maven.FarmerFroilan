@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Tractor extends Vehicle implements FarmVehicle<Tractor>, Rideable {
     private boolean operational;
     private String noise;
+    private Person currentRider;
     private ArrayList<Crop> cropArrayList = new ArrayList<>();
 
     public Tractor(boolean operational, String noise) {
@@ -28,5 +29,14 @@ public class Tractor extends Vehicle implements FarmVehicle<Tractor>, Rideable {
     // Getter for cropArrayList
     public ArrayList<Crop> getCropArrayList() {
         return cropArrayList;
+    }
+
+    @Override
+    public boolean ridden(Person person) {
+        if (this.operational) {
+            this.currentRider = person;
+            return true;
+        }
+        return false;
     }
 }
