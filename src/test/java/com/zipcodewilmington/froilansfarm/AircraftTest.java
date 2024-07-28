@@ -16,7 +16,12 @@ public class AircraftTest {
     public void setUp() {
         // Initialize the Aircraft and Pilots
         cropDuster = new CropDuster();
-        validPilot = new Pilot();
+        validPilot = new Pilot() {
+            @Override
+            public String mount(Tractor tractor) {
+                return "";
+            }
+        };
         invalidPilot = null;
     }
 

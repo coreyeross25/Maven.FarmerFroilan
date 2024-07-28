@@ -11,45 +11,50 @@ public class PilotTest {
 
     @BeforeEach
     public void setUp() {
-        pilot = new Pilot();
+        pilot = new Pilot() {
+            @Override
+            public String mount(Tractor tractor) {
+                return "";
+            }
+        };
         cropDuster = new CropDuster();
     }
 
     @Test
     public void testMountAircraftSuccessfully() {
         String result = pilot.mount(cropDuster);
-        assertEquals("Mounted successfully.", result);
+        assertEquals("MOUNTED", result);
     }
 
     @Test
     public void testDismountAircraftSuccessfully() {
         pilot.mount(cropDuster);
         String result = pilot.dismount(cropDuster);
-        assertEquals("Dismounted successfully.", result);
+        assertEquals("DISMOUNTED successfully", result);
     }
 
     @Test
     public void testMountAircraftWhenNotOperational() {
         cropDuster.setOperational(false);
         String result = pilot.mount(cropDuster);
-        assertEquals("Aircraft is not operational.", result);
+        assertEquals("AIRCRAFT is NOT Operational", result);
     }
 
     @Test
     public void testDismountAircraftWhenNotMounted() {
         String result = pilot.dismount(cropDuster);
-        assertEquals("Not mounted on this aircraft.", result);
+        assertEquals("NOT MOUNTED", result);
     }
 
     @Test
     public void testMountNullAircraft() {
-        String result = pilot.mount(null);
-        assertEquals("Cannot mount a null aircraft.", result);
+        String result = pilot.mount((Aircraft<Pilot>) null);
+        assertEquals("CANNOT MOUNT", result);
     }
 
     @Test
     public void testDismountNullAircraft() {
         String result = pilot.dismount(null);
-        assertEquals("Cannot dismount a null aircraft.", result);
+        assertEquals("CANNOT DISMOUNT", result);
     }
 }

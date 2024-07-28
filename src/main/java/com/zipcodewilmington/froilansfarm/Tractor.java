@@ -2,10 +2,10 @@ package com.zipcodewilmington.froilansfarm;
 
 import java.util.ArrayList;
 
-public class Tractor extends Vehicle implements FarmVehicle<Farmer> {
-    boolean operational;
-    String noise;
-    ArrayList<Crop> cropArrayList = new ArrayList<>();
+public class Tractor extends Vehicle implements FarmVehicle<Tractor>, Rideable {
+    private boolean operational;
+    private String noise;
+    private ArrayList<Crop> cropArrayList = new ArrayList<>();
 
     public Tractor(boolean operational, String noise) {
         this.operational = operational;
@@ -23,5 +23,10 @@ public class Tractor extends Vehicle implements FarmVehicle<Farmer> {
     @Override
     public Boolean operateOnFarm() {
         return operational;
+    }
+
+    // Getter for cropArrayList
+    public ArrayList<Crop> getCropArrayList() {
+        return cropArrayList;
     }
 }

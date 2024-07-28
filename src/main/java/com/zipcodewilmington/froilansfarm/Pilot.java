@@ -1,29 +1,29 @@
 package com.zipcodewilmington.froilansfarm;
 
-public class Pilot implements Rider<Pilot>, Rideable {
+public abstract class Pilot implements Rider<Pilot>, Rideable {
     private Aircraft<Pilot> currentAircraft;
 
     @Override
     public String mount(Aircraft<Pilot> aircraft) {
         if (aircraft == null) {
-            return "Cannot mount a null aircraft.";
+            return "CANNOT MOUNT";
         }
         if (aircraft.fly(this)) {
             this.currentAircraft = aircraft;
-            return "Mounted successfully.";
+            return "MOUNTED";
         }
-        return "Aircraft is not operational.";
+        return "AIRCRAFT is NOT Operational";
     }
 
     @Override
     public String dismount(Aircraft<Pilot> aircraft) {
         if (aircraft == null) {
-            return "Cannot dismount a null aircraft.";
+            return "CANNOT DISMOUNT";
         }
         if (this.currentAircraft == null || !this.currentAircraft.equals(aircraft)) {
-            return "Not mounted on this aircraft.";
+            return "NOT MOUNTED";
         }
         this.currentAircraft = null;
-        return "Dismounted successfully.";
+        return "DISMOUNTED successfully";
     }
 }

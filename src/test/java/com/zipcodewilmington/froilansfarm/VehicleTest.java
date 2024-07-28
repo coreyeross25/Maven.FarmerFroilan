@@ -14,7 +14,12 @@ public class VehicleTest {
     public void setUp() {
         //Initializing test data
         vehicle = new Vehicle(true, "Vroom");
-        person = new Person();
+        person = new Person() {
+            @Override
+            public String dismount(Tractor tractor) {
+                return "";
+            }
+        };
     }
 
     @Test
